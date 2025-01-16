@@ -206,8 +206,8 @@
     <button class="toggle-button show-all active" onclick="filterEvents('all')">Show All</button>
     <button class="toggle-button startup" onclick="filterEvents('startup')">Startup Investments</button>
     <button class="toggle-button co" onclick="filterEvents('co')">Country Office Investmentx</button>
-    <button class="toggle-button cryptofund" onclick="filterEvents('startup')">CryptoFund</button>
-    <button class="toggle-button engagement" onclick="filterEvents('co')">Engagements</button>
+    <button class="toggle-button cryptofund" onclick="filterEvents('cryptofund')">CryptoFund</button>
+    <button class="toggle-button engagement" onclick="filterEvents('engagement')">Engagements</button>
   </div>
 
   <div class="timeline">
@@ -377,13 +377,6 @@
     
   </div>
   <script>
-    function updateCounts() {
-      const openSourceCount = document.querySelectorAll('.tag.startup').length;
-      const apiOnlyCount = document.querySelectorAll('.tag.co').length;
-      
-      document.getElementById('startup-count').textContent = startupCount;
-      document.getElementById('co-count').textContent = coOnlyCount;
-    }
 
     function filterEvents(filter) {
         // Update active button state
