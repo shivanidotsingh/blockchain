@@ -31,10 +31,11 @@
     .month h3 {
       margin: 0;
       padding: 10px;
-      background-color: black;
+      background-color: cyan;
       color: white;
       border-radius: 5px;
       text-align: center;
+      font-size: 10pt;
     }
     .event {
       background-color: white;
@@ -134,9 +135,9 @@
       color: white;
     }
     .toggle-button.show-all {
-      background-color: black;
+      background-color: #2196f3;
       border: 1px solid #2196f3;
-      color: #2196f3;
+      color: white;
     }
     .toggle-button.show-all.active {
       background-color: #2196f3;
@@ -181,8 +182,11 @@
   </div>
   <div class="toggle-container">
     <button class="toggle-button show-all active" onclick="filterEvents('all')">Show All</button>
-    <button class="toggle-button startup" onclick="filterEvents('startup')">startup investment</button>
-    <button class="toggle-button co" onclick="filterEvents('co')">country office investment</button>
+    <button class="toggle-button startup" onclick="filterEvents('startup')">Startup Investments</button>
+    <button class="toggle-button co" onclick="filterEvents('co')">Country Office Investmentx</button>
+    <button class="toggle-button cryptofund" onclick="filterEvents('startup')">CryptoFund</button>
+    <button class="toggle-button engagement" onclick="filterEvents('co')">Engagements</button>
+    <button class="toggle-button fundraising" onclick="filterEvents('co')">Fundraising</button>
   </div>
 
   <div class="timeline">
