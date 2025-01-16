@@ -45,25 +45,12 @@
       transition: all 0.3s ease;
     }
     
-    /* Make open source events more prominent */
-    .event:has(.tag.startup) {
-      background-color: #e8f5e9;  /* Light green background */
-      border-left: 4px solid #4caf50;
-      transform: scale(1.02);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Slightly dim startup events */
-    .event:has(.tag.startup) {
+    /* Event box */
+    .event:has(.tag) {
       background-color: #fafafa;
-      border-left: 4px solid #f44336;
+      border-left: 4px solid #4caf50;
     }
-    
-    /* Hover effects */
-    .event:has(.tag.startup):hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
+   
     .event h4 {
       margin: 0;
       font-size: 14px;
@@ -81,13 +68,29 @@
       margin-top: 5px;
     }
     .tag.startup {
-      background-color: #4caf50;
+      background-color: #ff7373;
       color: white;
     }
     .tag.co {
-      background-color: #f44336;
+      background-color: #b2d8b2;
       color: white;
     }
+
+    .tag.engagement {
+      background-color: #dbecfb;
+      color: white;
+    }
+
+    .tag.cryptofund {
+      background-color: #4a7ca8;
+      color: white;
+    }
+
+    .tag.fundraising {
+      background-color: #fcb9aa;
+      color: white;
+    }
+    
     .event p a {
       color: #4caf50;
       text-decoration: none;
@@ -114,25 +117,25 @@
       color: white;
     }
     .toggle-button.startup {
-      background-color: #e8f5e9;
-      border: 1px solid #4caf50;
+      background-color: #fcb9aa;
+      border: 1px solid #ff7373;
       color: #4caf50;
     }
     .toggle-button.startup.active {
-      background-color: #4caf50;
+      background-color: #ff7373;
       color: white;
     }
     .toggle-button.co {
-      background-color: #ffebee;
-      border: 1px solid #f44336;
+      background-color: #b2d8b2;
+      border: 1px solid #6fa16f;
       color: #f44336;
     }
     .toggle-button.co.active {
-      background-color: #f44336;
+      background-color: #6fa16f;
       color: white;
     }
     .toggle-button.show-all {
-      background-color: #e3f2fd;
+      background-color: black;
       border: 1px solid #2196f3;
       color: #2196f3;
     }
@@ -141,10 +144,11 @@
       color: white;
     }
     .website-link {
-      text-align: center;
+      text-align: right;
       padding: 10px;
       background-color: #24292e;
       color: white;
+      font-size: 10px;
     }
     .website-link a {
       color: white;
