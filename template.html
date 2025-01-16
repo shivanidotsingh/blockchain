@@ -31,7 +31,7 @@
     .month h3 {
       margin: 0;
       padding: 10px;
-      background-color: #6200ea;
+      background-color: black;
       color: white;
       border-radius: 5px;
       text-align: center;
@@ -95,7 +95,7 @@
     .event p a:hover {
       text-decoration: underline;
     }
-/*    .toggle-container {
+    .toggle-container {
       display: flex;
       justify-content: center;
       padding: 20px;
@@ -113,21 +113,21 @@
     .toggle-button.active {
       color: white;
     }
-    .toggle-button.open-source {
+    .toggle-button.startup {
       background-color: #e8f5e9;
       border: 1px solid #4caf50;
       color: #4caf50;
     }
-    .toggle-button.open-source.active {
+    .toggle-button.startup.active {
       background-color: #4caf50;
       color: white;
     }
-    .toggle-button.api-only {
+    .toggle-button.co {
       background-color: #ffebee;
       border: 1px solid #f44336;
       color: #f44336;
     }
-    .toggle-button.api-only.active {
+    .toggle-button.co.active {
       background-color: #f44336;
       color: white;
     }
@@ -152,7 +152,7 @@
     }
     .github-link a:hover {
       text-decoration: underline;
-    }*/
+    }
     /* Scrollbar styles */
     body::-webkit-scrollbar {
       height: 8px;
@@ -174,23 +174,23 @@
 </head>
 <body>
 
-<!-- <div class="toggle-container">
+<div class="toggle-container">
     <button class="toggle-button show-all active" onclick="filterEvents('all')">Show All</button>
-    <button class="toggle-button open-source" onclick="filterEvents('country-office-investment')">Country Office</button>
-    <button class="toggle-button" onclick="filterEvents('startup-investment')">Startup</button>
-    <button class="toggle-button" onclick="filterEvents('engagement')">Engagement</button>
-    <button class="toggle-button" onclick="filterEvents('fundraiser')">Fundraiser</button>
-    <button class="toggle-button" onclick="filterEvents('cryptofund')">CryptoFund</button>
-  </div> -->
+    <button class="toggle-button co" onclick="filterEvents('country-office-investment')">Country Office Investment</button>
+    <button class="toggle-button startup" onclick="filterEvents('startup-investment')">Startup Investment</button>
+    <button class="toggle-button engagement" onclick="filterEvents('engagement')">Engagement</button>
+    <button class="toggle-button fundraiser" onclick="filterEvents('fundraiser')">Fundraiser</button>
+    <button class="toggle-button cryptofund" onclick="filterEvents('cryptofund')">CryptoFund</button>
+  </div>
   <div class="counter-container" style="text-align: center; padding: 20px; background-color: white; margin: 10px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
     <span class="counter-item">
       <span class="counter-label" style="color: #4caf50; font-weight: bold;">X</span>
-      <span class="counter-number" id="open-source-count" style="font-size: 1.2em; margin-left: 5px; color: #2e7d32;">0</span>
+      <span class="counter-number" id="startup-count" style="font-size: 1.2em; margin-left: 5px; color: #2e7d32;">0</span>
     </span>
     <span style="margin: 0 20px; color: #ddd;">|</span>
     <span class="counter-item">
       <span class="counter-label" style="color: #f44336; font-weight: bold;">Y</span>
-      <span class="counter-number" id="api-only-count" style="font-size: 1.2em; margin-left: 5px; color: #c62828;">0</span>
+      <span class="counter-number" id="co-count" style="font-size: 1.2em; margin-left: 5px; color: #c62828;">0</span>
     </span>
   </div>
   <div class="timeline">
@@ -213,11 +213,11 @@
   </div>
   <script>
     function updateCounts() {
-      const openSourceCount = document.querySelectorAll('.tag.open-source').length;
-      const apiOnlyCount = document.querySelectorAll('.tag.api-only').length;
+      const startupCount = document.querySelectorAll('.tag.startup').length;
+      const coCount = document.querySelectorAll('.tag.co').length;
       
-      document.getElementById('open-source-count').textContent = openSourceCount;
-      document.getElementById('api-only-count').textContent = apiOnlyCount;
+      document.getElementById('startup-count').textContent = startupCount;
+      document.getElementById('co-count').textContent = coCount;
     }
 
     function filterEvents(filter) {
