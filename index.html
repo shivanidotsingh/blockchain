@@ -31,7 +31,7 @@
     .month h3 {
       margin: 0;
       padding: 10px;
-      background-color: #6200ea;
+      background-color: black;
       color: white;
       border-radius: 5px;
       text-align: center;
@@ -46,21 +46,21 @@
     }
     
     /* Make open source events more prominent */
-    .event:has(.tag.open-source) {
+    .event:has(.tag.startup) {
       background-color: #e8f5e9;  /* Light green background */
       border-left: 4px solid #4caf50;
       transform: scale(1.02);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
     
-    /* Slightly dim API-only events */
-    .event:has(.tag.api-only) {
+    /* Slightly dim startup events */
+    .event:has(.tag.startup) {
       background-color: #fafafa;
       border-left: 4px solid #f44336;
     }
     
     /* Hover effects */
-    .event:has(.tag.open-source):hover {
+    .event:has(.tag.startup):hover {
       transform: scale(1.03);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
@@ -80,11 +80,11 @@
       border-radius: 3px;
       margin-top: 5px;
     }
-    .tag.open-source {
+    .tag.startup {
       background-color: #4caf50;
       color: white;
     }
-    .tag.api-only {
+    .tag.co {
       background-color: #f44336;
       color: white;
     }
@@ -113,21 +113,21 @@
     .toggle-button.active {
       color: white;
     }
-    .toggle-button.open-source {
+    .toggle-button.startup {
       background-color: #e8f5e9;
       border: 1px solid #4caf50;
       color: #4caf50;
     }
-    .toggle-button.open-source.active {
+    .toggle-button.startup.active {
       background-color: #4caf50;
       color: white;
     }
-    .toggle-button.api-only {
+    .toggle-button.co {
       background-color: #ffebee;
       border: 1px solid #f44336;
       color: #f44336;
     }
-    .toggle-button.api-only.active {
+    .toggle-button.co.active {
       background-color: #f44336;
       color: white;
     }
@@ -140,17 +140,17 @@
       background-color: #2196f3;
       color: white;
     }
-    .github-link {
+    .website-link {
       text-align: center;
       padding: 10px;
       background-color: #24292e;
       color: white;
     }
-    .github-link a {
+    .website-link a {
       color: white;
       text-decoration: none;
     }
-    .github-link a:hover {
+    .website-link a:hover {
       text-decoration: underline;
     }
     /* Add these styles to ensure consistent scrollbar appearance across browsers */
@@ -173,25 +173,15 @@
   </style>
 </head>
 <body>
-  <div class="github-link">
+  <div class="website-link">
     <a href="https://www.unicefventurefund.org/" target="_blank">unicef venture fund</a>
   </div>
   <div class="toggle-container">
     <button class="toggle-button show-all active" onclick="filterEvents('all')">Show All</button>
-    <button class="toggle-button open-source" onclick="filterEvents('open-source')">X</button>
-    <button class="toggle-button api-only" onclick="filterEvents('api-only')">Y</button>
+    <button class="toggle-button startup" onclick="filterEvents('startup')">startup investment</button>
+    <button class="toggle-button co" onclick="filterEvents('co')">country office investment</button>
   </div>
-  <div class="counter-container" style="text-align: center; padding: 20px; background-color: white; margin: 10px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-    <span class="counter-item">
-      <span class="counter-label" style="color: #4caf50; font-weight: bold;">X</span>
-      <span class="counter-number" id="open-source-count" style="font-size: 1.2em; margin-left: 5px; color: #2e7d32;">0</span>
-    </span>
-    <span style="margin: 0 20px; color: #ddd;">|</span>
-    <span class="counter-item">
-      <span class="counter-label" style="color: #f44336; font-weight: bold;">Y</span>
-      <span class="counter-number" id="api-only-count" style="font-size: 1.2em; margin-left: 5px; color: #c62828;">0</span>
-    </span>
-  </div>
+
   <div class="timeline">
     <!-- 2024 -->
     <div class="month">
@@ -199,12 +189,12 @@
       <div class="event">
         <h4>DAO Pilo first transaction</h4>
         <p> DAO Pilo first transaction (later <a href="https://huggingface.co/collections/stabilityai/stable-diffusion-3-666992fb11f5d8d0ec8192e8" target="_blank">open weightsd</a>).</p>
-        <span class="tag open-source">Internal Pilot</span>
+        <span class="tag internal">Internal Pilot</span>
       </div>
       <div class="event">
         <h4>Lorem Ipsum</h4>
         <p>Another Event in 2024.</p>
-        <span class="tag api-only">Tag Example</span>
+        <span class="tag co">Tag Example</span>
       </div>
       
       
@@ -216,19 +206,19 @@
       <div class="event">
         <h4>Hackathon on climate change and cash transfers </h4>
         <p>More detail to come</p>
-        <span class="tag open-source">Engagement</span>
+        <span class="tag engagement">Engagement</span>
       </div>
      
       <div class="event">
         <h4>UNICEF Burundi Pilot</h4>
         <p>Financial inclusion project for the use of blockchain for smart contracts kicks off</p>
-        <span class="tag api-only">Country Office Investment</span>
+        <span class="tag co">Country Office Investment</span>
       </div>
 
       <div class="event">
         <h4>Blockchain companies in climate cohort onboard</h4>
         <p>More detail to come</p>
-        <span class="tag api-only">Startup Investment</span>
+        <span class="tag startup">Startup Investment</span>
       </div>
     </div>
     <!-- 2022 -->
@@ -237,32 +227,32 @@
       <div class="event">
         <h4>Gitcoin pilot - $100K raised for 10 DPGs</h4>
         <p>Gitcoin pilot - $100K raised for 10 DPGs</p>
-        <span class="tag open-source">Internal Pilot</span>
+        <span class="tag internal">Internal Pilot</span>
       </div>
       <div class="event">
         <h4>UNICEF Nepal Cash Transfer</h4>
         <p>More Detail to come</p>
-        <span class="tag api-only">Country Office Investment</span>
+        <span class="tag co">Country Office Investment</span>
       </div>
       <div class="event">
         <h4>Third blockchain cohort onboard</h4>
         <p>Digital Inclusion</p>
-        <span class="tag open-source">Startup Investment</span>
+        <span class="tag startup">Startup Investment</span>
       </div>
       <div class="event">
         <h4>First Institutional payment in Crypto</h4>
         <p>More detail to come.</p>
-        <span class="tag open-source">CryptoFund</span>
+        <span class="tag cryptofun">CryptoFund</span>
       </div>
       <div class="event">
         <h4>CryptoFund disburses $1M in a single day</h4>
         <p>$3M disbursed in total</p>
-        <span class="tag open-source">CryptoFund</span>
+        <span class="tag cryptofund">CryptoFund</span>
       </div>
       <div class="event">
         <h4>Donation from a blockchain alumni company</h4>
         <p>Received first donation in Crypto from a blockchain cohort graduate of the Fund.</p>
-        <span class="tag api-only">CryptoFund</span>
+        <span class="tag cryptofund">CryptoFund</span>
       </div>
       
     </div>
@@ -272,14 +262,14 @@
       <div class="event">
         <h4>Second Blockchain cohort onboards</h4>
         <p>Financial Inclusion.</p>
-        <span class="tag api-only">Startup Investment</span>
+        <span class="tag startup">Startup Investment</span>
       </div>
       
   
       <div class="event">
         <h4>CryptoFund total disbursement crosses $1M</h4>
         <p>More Detail to come.</p>
-        <span class="tag open-source">CryptoFund</span>
+        <span class="tag cryptofund">CryptoFund</span>
       </div>
       
     </div>
@@ -289,7 +279,7 @@
       <div class="event">
         <h4>Launch of Juniper tool suite</h4>
         <p>Link here.</p>
-        <span class="tag open-source">CryptoFund</span>
+        <span class="tag cryptofund">CryptoFund</span>
       </div>
      
     </div>
@@ -299,17 +289,17 @@
       <div class="event">
         <h4>CryptoFund Launches</h4>
         <p>(Yayy!)</p>
-        <span class="tag api-only">CryptoFund</span>
+        <span class="tag cryptofund">CryptoFund</span>
       </div>
       <div class="event">
         <h4>UNICEF Kazakhstan</h4>
         <p>Smart contract project kicks off.</p>
-        <span class="tag open-source">Country Office Investment</span>
+        <span class="tag co">Country Office Investment</span>
       </div>
       <div class="event">
         <h4>Blockchain for connectivity prototype launches</h4>
         <p>More detail to come.</p>
-        <span class="tag open-source">Engagement</span>
+        <span class="tag engagement">Engagement</span>
       </div>
      
       
@@ -321,7 +311,7 @@
       <div class="event">
         <h4>First Blockchain Cohort onboards</h4>
         <p>Tech exploration</p>
-        <span class="tag open-source">Startup Investment</span>
+        <span class="tag startup">Startup Investment</span>
       </div>
       
     </div>
@@ -331,13 +321,13 @@
       <div class="event">
         <h4>UNICEF launches SURGE</h4>
         <p>education and learning series.</p>
-        <span class="tag open-source">Engagement</span>
+        <span class="tag engagement">Engagement</span>
       </div>
       
       <div class="event">
         <h4>UNICEF France runs crypto campaign</h4>
         <p>More detail to come.</p>
-        <span class="tag api-only">Fundraising</span>
+        <span class="tag fundraising">Fundraising</span>
       </div>
     </div>
     <!-- 2016 -->
@@ -346,12 +336,12 @@
       <div class="event">
         <h4>First blockchain prototype: ID + Bitcoin blockchain </h4>
         <p>The beginning.</p>
-        <span class="tag api-only">Internal Pilot</span>
+        <span class="tag internal">Internal Pilot</span>
       </div>
       <div class="event">
         <h4>First blockchain company investment (USD)</h4>
         <p>More detail to come.</p>
-        <span class="tag api-only">Startup Investment</span>
+        <span class="tag startup">Startup Investment</span>
       </div>
       
     </div>
@@ -360,11 +350,11 @@
   </div>
   <script>
     function updateCounts() {
-      const openSourceCount = document.querySelectorAll('.tag.open-source').length;
-      const apiOnlyCount = document.querySelectorAll('.tag.api-only').length;
+      const openSourceCount = document.querySelectorAll('.tag.startup').length;
+      const apiOnlyCount = document.querySelectorAll('.tag.co').length;
       
-      document.getElementById('open-source-count').textContent = openSourceCount;
-      document.getElementById('api-only-count').textContent = apiOnlyCount;
+      document.getElementById('startup-count').textContent = startupCount;
+      document.getElementById('co-count').textContent = coOnlyCount;
     }
 
     function filterEvents(filter) {
